@@ -14,7 +14,7 @@ publish_dependencies_as_layer(){
 
 publish_function_code(){
 	echo "Deploying the code itself..."
-	cd src/lambdas
+	cd src/aws_lambdas
 	zip -r ../../code.zip *
 	cd ../..
 	aws lambda update-function-code --function-name "${INPUT_LAMBDA_FUNCTION_NAME}" --zip-file fileb://code.zip
