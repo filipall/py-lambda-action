@@ -20,8 +20,14 @@ Stored as secrets or env vars, doesn't matter. But also please don't put your AW
     That includes the `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, etc. It's used by `awscli`, so the docs for that [can be found here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html).
 
 ### Inputs
+- `dependency_directory`
+    The name/path to the directory with the dependencies that have been installed. Defaults to `./python`.
 - `lambda_layer_arn`  
     The ARN for the Lambda layer the dependencies should be pushed to **without the version** (every push is a new version).
+- `models_directory`
+    The name/path to the directory with the models. Defaults to `./models`.
+- `lambda_models_layer_arn`  
+    The ARN for the Lambda layer the models should be pushed to **without the version** (every push is a new version).
 - `lambda_function_name`  
     The Lambda function name. [From the AWS docs](https://docs.aws.amazon.com/cli/latest/reference/lambda/update-function-code.html), it can be any of the following:
     - Function name - `my-function`  
