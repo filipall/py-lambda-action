@@ -20,7 +20,7 @@ install_zip_models(){
 publish_models_as_layer(){
 	echo "Publishing models as a layer..."
 	local models_result=$(aws lambda publish-layer-version --layer-name "${INPUT_LAMBDA_MODELS_LAYER_ARN}" --zip-file fileb://models.zip)
-	MODELS_LAYER_VERSION=$(jq '.Version' <<< "models_result")
+	MODELS_LAYER_VERSION=$(jq '.Version' <<< "$models_result")
 	rm models.zip
 }
 
